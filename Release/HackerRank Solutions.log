@@ -1,0 +1,4 @@
+﻿  Reverse the k elements of a queue.cpp
+C:\Users\gaura\source\repos\HackerRank Solutions\HackerRank Solutions\Reverse the k elements of a queue.cpp(19,36): warning C4018: '>': signed/unsigned mismatch
+C:\Users\gaura\source\repos\HackerRank Solutions\HackerRank Solutions\Reverse the k elements of a queue.cpp(37,23): warning C4018: '<': signed/unsigned mismatch
+LINK : fatal error LNK1104: cannot open file 'C:\Users\gaura\source\repos\HackerRank Solutions\Release\HackerRank Solutions.exe'
