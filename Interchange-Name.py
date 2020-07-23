@@ -4,8 +4,8 @@
 #PQR EFG
 
 #Output:
-#ABC EFG
-#PQR XYZ
+#ABC XYZ
+#PQR EFG
 
 str1 = input("Enter 1st full name : ")
 str2 = input("Enter 2nd full name : ")
@@ -20,6 +20,6 @@ print(str12, str22)
 #Another method
  str1 = input("Enter 1st full name : ).split()
  str2 = input("ENter 2nd full name : ).split()
- print(a[0], b[1])
- print(b[0], a[1])
+ print(a[0], b[0])
+ print(b[1], a[1])
  
