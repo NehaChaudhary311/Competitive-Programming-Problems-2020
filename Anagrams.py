@@ -6,8 +6,10 @@
 
 str1 = input("First string :")
 str2 = input("Second string :")
+#Using two arrays to keep the frequency of characters in each of the string
 count1 = [0] * 256
 count2 = [0] * 256
+
 #Ord returns the unicode code point value of str[i]
 for i in str1: 
     count1[ord(i)]+= 1
@@ -25,3 +27,10 @@ for i in range(26):
   
 print("Anagram")
 
+#Another approach
+str1 = input("First string : ")
+str2 = input("Second string : ")
+if (sorted(s1) == sorted(s2)):
+    print("Anagram")
+else:
+    print("Not an anagram")
