@@ -15,3 +15,11 @@ str21, str22 = str2.split(" ")
 
 print(str11, str21)
 print(str12, str22)
+
+
+#Another method
+ str1 = input("Enter 1st full name : ).split()
+ str2 = input("ENter 2nd full name : ).split()
+ print(a[0], b[1])
+ print(b[0], a[1])
+ 
