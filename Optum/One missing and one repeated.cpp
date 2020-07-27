@@ -46,3 +46,10 @@ int main(){
 	cout << "Missing : " << missing<<endl;
 	return 0;
 }
+
+/*
+Approach 2 :  Sum = n(n+1)/2 – x + y and Product = P = 1*2*3*…*n * y / x
+Solve the above two equations to find the value of x and y
+
+Approach 3 : Sort the input array and check for missing and repeating values
+*/
