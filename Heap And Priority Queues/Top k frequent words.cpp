@@ -33,7 +33,9 @@ public:
         map<string, int> mp;
         for(int i = 0; i < words.size(); i++)  // count the frequency of the words 
             mp[words[i]]++;
-        
+        //I planned to use a priority_queue but couldn't as then I wouldn't have been able to
+        //sort the priority_queue according to my need in the need
+        //because the question asks for a particular order of strings when their frequencies are equal
         vector<pair<string, int>> v;
         vector<string> ans;
         
