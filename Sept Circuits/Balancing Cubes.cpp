@@ -23,3 +23,22 @@ int main(){
     ans = numOfOperations(num);
     cout<<ans;
 }
+/*
+OR
+*/
+int numOfOperations(int num){
+    int ans = 0;
+    while(1)
+    {
+        if(num ==1)
+            break;
+        num = num - ((num/3) + (num/3));
+        ans++;
+        if(num <= 3)
+        {
+            ans++;
+            break;
+        }
+    }
+    return ans;
+}
