@@ -27,33 +27,31 @@ struct Node* newNode(int data)
     node->right = NULL;
     return node;
 }
-void topView(Node* node) {
-    if (node == NULL) return;
+void topView(Node* root) {
     queue<pair<Node*, int>> q;
     map<int, int> m;
-    int hd = 0;
-    q.push({ node, hd });
-    while (!q.empty()) {
-        pair<Node*, int> temp;
-        q.pop();
-        Node* node = temp.first;
-        int hd = temp.second;
-        if (node != nullptr) {
-            m[hd] = node->data;
-        }
-      
-        if (node->left != nullptr) {
-            q.push({ node->left, hd - 1 });
-        }
-        if (node->right != nullptr) {
-            q.push({ node->right, hd + 1 });
+    q.push(make_pair(root, 0));
+    while (q.empty() == false) {
+        Node* current_node = q.front().first;
+        int node_val = current_node->data;
+        int hd = q.front().second;
+       
+        //prevent overwriting the entry in map if the hd already exists in the map
+        if (m.find(hd) == m.end())
+            m[hd] = node_val;
 
+        q.pop();
+        if (current_node->left) {
+            q.push(make_pair(current_node->left, hd-1));
         }
-        for (map<int,int>::iterator it = m.begin(); it != m.end(); it++) {
-            cout << it->second << " ";
+        if (current_node->right) {
+            q.push(make_pair(current_node->right, hd+1 ));
         }
     }
-
+    for (auto i = m.begin(); i != m.end(); i++)
+    {
+        cout << i->second << " ";
+    }
 }
 int main(int argc, const char* argv[]) {
     // insert code here...
