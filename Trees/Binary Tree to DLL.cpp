@@ -1,5 +1,5 @@
 /* Structure for tree and linked list
-
+//Revisit
 struct Node
 {
     int data;
