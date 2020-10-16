@@ -6,24 +6,33 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 
 */
 
+#include<iostream>
 #include<algorithm>
-class Solution {
-public:
-    int maxSubArray(vector<int>& nums) {
-        //Sorted the array
-    int max_so_far = INT_MIN;
-    int max_ending_here = 0;
-
-    for (int i = 0; i < nums.size(); i++) {
-        max_ending_here += nums[i];
-
-        max_so_far = max(max_so_far, max_ending_here);
-
-        max_ending_here = max(max_ending_here, 0);
+#include<vector>
+using namespace std;
+int kadane(vector<int> &num){
+    int curr_sum = num[0];
+    int max_sum = curr_sum;
+    for(int i = 1; i<num.size(); i++){
+        curr_sum = max(curr_sum + num[i], num[i]);
+        max_sum = max(max_sum, curr_sum);
     }
-
-    return max_so_far;
-    }
-
-        
-};
+    return max_sum;
+}
+int main()
+ {
+	//code
+	int T;
+	cin>>T;
+	while(T--){
+	    int n;
+	    cin>>n;
+	    vector<int> num(n, 0);
+	    for(int i = 0; i<num.size(); i++){
+	        cin>>num[i];
+	    }
+        cout<<kadane(num)<<endl;
+	}
+	
+	return 0;
+}
