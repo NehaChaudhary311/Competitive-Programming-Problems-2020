@@ -32,3 +32,26 @@ public:
         return ans->next;
     }
 };
+
+/*
+ANOTHER WAY 
+*/
+Node* sortedMerge(Node* head_A, Node* head_B)  
+{  
+    // code here
+    Node *head;
+    Node **ref=&head;
+    while(head_A && head_B)
+    {   if(head_A->data < head_B->data)
+        {   *ref=head_A;
+            head_A=head_A->next;
+        }
+        else
+        {   *ref=head_B;
+            head_B=head_B->next;
+        }
+        ref=&((*ref))->next;
+    }
+    *ref=(head_A)?head_A:head_B;
+    return head;
+}  
