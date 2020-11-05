@@ -39,19 +39,12 @@ int rearrangeChars(string s){
         }
         i++;
     }
-    //
-    if(len%2 == 0){
-        if(max <= len/2)
-            return 1;
-        else
-            return 0;
-    }
-    if(len%2 != 0){
-        if(max <= len/2)
-            return 1;
-        else
-            return 0;
-    }
+	
+    if(max <= len/2)
+        return 1;
+    else
+        return 0;
+
 }
 int main()
  {
