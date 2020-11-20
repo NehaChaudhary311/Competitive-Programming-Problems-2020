@@ -33,3 +33,25 @@ public:
 };
 
 //APPROACH 2: 
+class Solution {
+public:
+    int maximum69Number (int num) {
+        stack<int> stk;
+        int temp = num;
+        int i = 0, idx = -1;
+        
+        while (temp) {
+            if (temp%10 == 6) {
+                idx = i;
+            }
+            i++;
+            temp/=10;
+        }
+        
+        if (idx == -1)
+            return num;
+        
+        return num + pow(10, idx)*3;
+        
+    }
+};
