@@ -41,8 +41,8 @@ public:
 class Solution {
 public:
     Node* flatten(Node* head) {
-        for (Node* h = head; h; h = h->next)
-        {
+        Node* h = head;
+        while(h != NULL){
             if (h->child)
             {
                 Node* next = h->next;
@@ -54,6 +54,7 @@ public:
                 p->next = next;
                 if (next) next->prev = p;
             }
+            h = h->next;
         }
         return head;
     }
