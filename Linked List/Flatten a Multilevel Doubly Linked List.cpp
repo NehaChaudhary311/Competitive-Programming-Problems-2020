@@ -59,3 +59,34 @@ public:
         return head;
     }
 };
+
+//STACK APPROACH - not working though
+class Solution {
+public:
+    Node* flatten(Node* head) {
+        if(!head) return head;
+        Node* h = head;
+        stack<Node*> stk;
+        while(h->next != NULL){
+            if(h->child){
+                if(h->next){
+                    stk.push(h->next);
+                }
+                h->next = h->child;
+                h->child = NULL;
+            }
+            else if(h->next == NULL && !stk.empty()){
+                Node* tmp = stk.top();
+                stk.pop();
+                h->next = tmp;
+            }
+            //to create the prev link we are using 'if' and not 'else if'
+            if(h->next){
+                h->next->prev = h;
+            }
+            h = h->next;
+        }
+    
+    return head ;
+    }
+};
