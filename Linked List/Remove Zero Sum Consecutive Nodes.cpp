@@ -15,6 +15,7 @@ Check for each vector[i] (i = 0 to i = vector.size()) with each vector[j] (j = i
 If at any point sum == 0, erase the elements from vector from that ith position to the jth position
 This way we would be left with an array having only required numbers
 Now, create a Linked List using this array
+O(n^2)
 */
 
 class Solution {
@@ -58,5 +59,40 @@ public:
 
             return new_head;
         }
+    }
+};
+
+/*
+APPROACH 2: O(N^2) Without using vector, I have two while loops where I check for each possibility of sum = 0
+*/
+class Solution {
+public:
+    ListNode* removeZeroSumSublists(ListNode* head) {
+        ListNode* new_head = new ListNode(0);
+        new_head->next = head;
+        ListNode* cur = new_head;
+        //cur is like 'i' of outer for loop
+        while(cur != NULL)
+        {
+            int sum=0;
+            //head is like 'j' of inner for loop
+            while(head != NULL)
+            {
+                sum += head->val;
+                if(sum == 0)
+                {
+                   cur->next = head->next; 
+                }
+                head = head->next;
+            }
+            //if we don't find the sum = 0 , i=i+1
+            cur = cur->next;
+            if(cur != NULL)
+            {
+                //j = i+1
+                head = cur->next;
+            }
+        }
+        return new_head->next; 
     }
 };
