@@ -35,9 +35,10 @@ Node* addOneFunc(Node* head){
         carry = (sum >= 10)? 1 : 0; 
         sum = sum % 10; 
         head->data = sum;
-        temp = head; 
+        temp = head; //keeping it for cases like 9->9->9->9
         head = head->next; 
     } 
+    //for cases like 9->9->9->9, output should be like this 1->0->0->0->0
     if (carry > 0) 
         temp->next = new Node(carry); 
 
