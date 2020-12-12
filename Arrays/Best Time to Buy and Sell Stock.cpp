@@ -11,3 +11,4 @@ public:
        return mx;
     }
 };
+//NOte for a testcase like [10, 9, 8], we should return -1
