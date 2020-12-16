@@ -13,6 +13,8 @@ public:
             for(int i = c1; i <= c2; i++) ans.push_back(matrix[r1][i]);
             //right col
             for(int i = r1 + 1; i <= r2; i++) ans.push_back(matrix[i][c2]);
+            //for cases in which the matrix is not square matrix
+            //if the matrix is not square, we can calculate the inner layer using the above for loops
             if(r1 < r2 && c1 < c2){
                 //bottom row
                 for (int i = c2 - 1; i > c1; i--) ans.push_back(matrix[r2][i]);
