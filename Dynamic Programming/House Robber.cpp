@@ -19,7 +19,8 @@ public:
     int rob(vector<int>& nums) {
         if (nums.empty()) return 0;
         if (nums.size() == 1) return nums[0];
-
+    
+        ////dp will store the max amount that can be looted till the ith position
         int dp[nums.size()];
         dp[0] = nums[0];
         dp[1] = max(nums[0], nums[1]);
