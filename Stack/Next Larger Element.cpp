@@ -54,3 +54,22 @@ vector<long long> nextLargerElement(vector<long long> arr, int n){
     reverse(ans.begin(), ans.end());
     return ans;
 }
+
+//For Circular Array
+vector<int> nextGreaterElements(vector<int>& nums) {
+       int n = nums.size();
+        vector<int> ans;
+        int x;
+        stack <int> s;
+        for (int i = n - 1; i >= 0; i--) s.push(nums[i]);
+        for (int i = n - 1; i >= 0; i--) {
+            while (!s.empty() && s.top() <= nums[i]) {
+                s.pop();
+            }
+            x = s.empty() ? -1 : s.top();
+            ans.push_back(x);
+            s.push(nums[i]);
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+}
